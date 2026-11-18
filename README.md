@@ -83,7 +83,8 @@
       <p><strong>2. Korrektur der OCR-Qualität.</strong> Texte mit schlechter OCR-Qualität werden über die API von Gemini 1.5 Flash automatisch nachkorrigiert.</p>
       <p><strong>3. Linguistische Annotation.</strong> Die Texte werden mit Stanza (Peng et al. 2020) tokenisiert, lemmatisiert und mit Wortartinformationen (POS-Tags) versehen.</p>
       <p><strong>4. Metadaten.</strong> Jeder Text erhält eine eindeutige ID. Um die Metadaten über alle Quellen hinweg konsistent zu halten, wurde ein einheitliches Metadatenschema entwickelt; ist ein Attribut nicht verfügbar, wird es einheitlich mit „no_entry“ belegt.</p>
-      <p><strong>5. Speicherung und Zugang.</strong> Für jeden Text wird eine vertikale VRT-Datei erzeugt. Das Korpus ist in CQPweb (Hardie 2012) gespeichert und kann dort durchsucht und analysiert werden.</p>
+      <p><strong>5. Disambiguierung polysemer Ausdrücke.</strong> 24 Ausdrücke, die in der Alltagssprache und im Bereich der internationalen Beziehungen (IB) unterschiedliche Bedeutungen haben, werden mithilfe von gpt-oss-120b (OpenAI) disambiguiert. Die Aufgabe ist als binäre Klassifikation angelegt: Jeder Ausdruck wird entweder als IB-Term oder als Nicht-IB-Term klassifiziert. Die Klassifikation wird teilweise manuell korrigiert und als zusätzliche Spalte gespeichert.</p>
+      <p><strong>6. Speicherung und Zugang.</strong> Für jeden Text wird eine vertikale VRT-Datei erzeugt. Das Korpus ist in CQPweb (Hardie 2012) gespeichert und kann dort durchsucht und analysiert werden.</p>
 
       <h3>Literatur</h3>
       <p class="refs">Hardie, Andrew (2012): CQPweb – Combining Power, Flexibility and Usability in a Corpus Analysis Tool. In: <em>International Journal of Corpus Linguistics</em> 17(3), S. 380–409.</p>
